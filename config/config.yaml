@@ -1,0 +1,13 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  raw_data_path: data/raw/application_train.csv
+  train_data_path: artifacts/data_ingestion/train.csv
+  test_data_path: artifacts/data_ingestion/test.csv
+
+reports:
+  root_dir: artifacts/reports
+
+models:
+  root_dir: artifacts/models
