@@ -1,0 +1,14 @@
+TARGET:
+  type: int64
+
+SK_ID_CURR:
+  type: int64
+
+AMT_INCOME_TOTAL:
+  type: float64
+
+AMT_CREDIT:
+  type: float64
+
+NAME_CONTRACT_TYPE:
+  type: object

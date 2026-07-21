@@ -1,0 +1,13 @@
+random_state: 42
+
+test_size: 0.2
+
+model:
+  logistic_regression:
+    C: 1.0
+    max_iter: 1000
+    class_weight: balanced
+  random_forest:
+    n_estimators: 200
+    max_depth: 8
+    min_samples_split: 5

@@ -7,7 +7,6 @@ and line number where it occurred.
 """
 
 import sys
-
 class CreditRiskException(Exception):
     """
     Custom exception class for the project.
@@ -31,7 +30,7 @@ class CreditRiskException(Exception):
         self.error_message = str(error_message)
 
         super().__init__(self.error_message)
-
+        
     def __str__(self):
 
         return (

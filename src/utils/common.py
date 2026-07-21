@@ -87,3 +87,65 @@ def save_json(path: Path, data: dict):
 
     except Exception as e:
         raise CreditRiskException(e, sys)
+    
+    
+    
+@ensure_annotations
+def load_json(path: Path) -> ConfigBox:
+    """
+    Load a JSON file and return its contents as a ConfigBox.
+
+    Args:
+        path (Path): Path to the JSON file.
+
+    Returns:
+        ConfigBox: JSON content with dot notation support.
+    """
+
+    try:
+        with open(path, "r") as f:
+            content = json.load(f)
+
+        logger.info(f"JSON file loaded successfully from: {path}")
+
+        return ConfigBox(content)
+
+    except Exception as e:
+        logger.error(f"Failed to load JSON file: {path}")
+        raise CreditRiskException(e, sys)
+    
+@ensure_annotations
+def save_pickle(path: Path, obj: object):
+    """
+    Save any Python object as a pickle file.
+    Args:
+        path (Path): Output file path.
+        obj (object): Python object to save.
+    """
+
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+
+        joblib.dump(obj, path)
+
+        logger.info(f"Pickle file saved at: {path}")
+
+    except Exception as e:
+        raise CreditRiskException(e, sys)
+    
+@ensure_annotations
+def load_pickle(path: Path):
+    """
+    Load a Python object from a pickle file.
+    Args:
+        path (Path): Pickle file path.
+
+    Returns:
+        object: Loaded Python object.
+    """
+    try:
+        obj = joblib.load(path)
+        logger.info(f"Pickle file loaded successfully from: {path}")
+        return obj
+    except Exception as e:
+        raise CreditRiskException(e, sys)

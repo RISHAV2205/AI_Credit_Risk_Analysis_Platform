@@ -6,3 +6,6 @@ scikit-learn
 pyyaml
 notebook
 jupyter
+python-box
+ensure
+joblib
