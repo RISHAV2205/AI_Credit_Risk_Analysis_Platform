@@ -11,7 +11,6 @@ from src.exception.exception import CreditRiskException
 
 import sys
 
-
 @ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
     """
